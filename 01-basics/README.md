@@ -38,7 +38,7 @@ line(x1,y1,x2,y2); // from (x1,y1) to (x2,y2)
 
 Note: you can also use `ellipse(x,y,diameter)` to draw a perfect circle.
 
-## Text, Layers, Thickness
+## Text, Layers, Comments, Thickness
 
 ### Text
 
@@ -73,6 +73,36 @@ line(0,0,200,200);
 rect(0,0,200,200);
 ```
 You actually won't see the `ellipse` or the `line` because the `rect` is drawn **after** and thus is on "top" of those shapes.
+
+### Comments
+
+* A comment above a chunk of code describes that chunk of code
+* A comment next to a line of a code describes that line of code
+* Use `//` to comment out a single line of code.
+* Use `/* code */` to comment out multiple lines of code
+
+```js
+function draw() {
+    // body
+    rect(80,100,40,70);
+
+    // feet
+    line(90,170,70,200); // left
+    line(110,170,130,200); // right
+
+    /*
+    // head
+    ellipse(100,75,60,50); 
+
+    // eyes
+    ellipse(85,75,10,30); // left
+    ellipse(115,75,10,30); // left
+
+    // nose 
+    point(100, 80);
+    */
+}
+```
 
 ### Thickness
 
