@@ -38,6 +38,8 @@ line(x1,y1,x2,y2); // from (x1,y1) to (x2,y2)
 
 Note: you can also use `ellipse(x,y,diameter)` to draw a perfect circle.
 
+## Text, Layers, Thickness
+
 ### Text
 
 ```js
