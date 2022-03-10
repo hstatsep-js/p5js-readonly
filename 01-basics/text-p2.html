@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            
+            function setup() {
+                createCanvas(800, 600);
+                // background(200);
+                frameRate(1)
+            }
+
+            function draw() {
+                background(200);
+                
+                // kanye
+                textSize(50);
+                textAlign(CENTER);
+                text("Kanye", 400, 300);
+                
+                // debugging
+                textSize(12);
+                textAlign(LEFT);
+                text(mouseX + " " + mouseY,0,12);
+                
+                // point
+                strokeWeight(10);
+                point(400,300);
+                
+                // rect
+                // strokeWeight(0);
+                // noStroke(); // same as strokeWeight(0);
+                rect(0,0,100,100);
+                
+                // ellipse
+                strokeWeight(5);
+                ellipse(200,200,50,50);
+            }
+            
+        </script>
+    </body>
+</html>
