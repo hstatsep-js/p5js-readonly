@@ -150,3 +150,4 @@ console.log(mouseX,mouseY); // Helpful for locating a shape
     * Example: `fill(0,255,0,)` = red fill (inside)
   * `noFill()`: same as setting opacity to 0
   * `noStroke()`: same as setting `strokeWeight(0)`
+  * `background(r,g,b,[a])`: set the background to a color
