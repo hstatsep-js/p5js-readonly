@@ -115,3 +115,38 @@ strokeWeight(10); // Sets the thickness of your shape to however many pixels you
 ```js
 console.log(mouseX,mouseY); // Helpful for locating a shape
 ```
+
+## Color
+
+### Color Theory
+
+* Grayscale
+  * `0` is black (no "light")
+  * `1-244` is gray (dark to light)
+  * `255` is white (all "light")
+* Color
+  * RGB = red/green/blue (think "Roy-G-Biv")
+  * Each color also goes 0-255
+  * `0` means NONE of that color
+  * `255` means MAX of that color
+  * Ex: `(255,0,0)` is all red, no green, no blue
+* Mixing
+  * `(0,0,0)` is black
+  * `(num,num,num)` is grayscale (if they're all the same)
+  * `(255,255,255)` is white
+  * Red + Green = Yellow
+  * Red + Blue = Purple
+  * Green + Blue = Cyan (blue-green)
+  * _^you don't need to memorize these^_
+* Alpha (opacity)
+  * How solid the color is
+  * `0`: empty
+  * `1-254`: translucent (see-through)
+  * `255`: solid
+* Functions
+  * `fill(r,g,b,[a])`
+    * Example: `fill(255,0,0)` = red fill (inside)
+  * `stroke(r,g,b,[a])`
+    * Example: `fill(0,255,0,)` = red fill (inside)
+  * `noFill()`: same as setting opacity to 0
+  * `noStroke()`: same as setting `strokeWeight(0)`
