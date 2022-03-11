@@ -133,6 +133,8 @@ console.log(mouseX,mouseY); // Helpful for locating a shape
 * Mixing
   * `(0,0,0)` is black
   * `(num,num,num)` is grayscale (if they're all the same)
+    * If they're all the same number (black/gray/white), you can just use the one number
+    * Ex: `fill(127)` for gray
   * `(255,255,255)` is white
   * Red + Green = Yellow
   * Red + Blue = Purple
