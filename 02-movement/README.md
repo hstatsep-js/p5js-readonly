@@ -15,17 +15,17 @@ var circleX; // variable declared globally
 // circleX = 0; // could also be initialized here.
 
 function setup() {
-  createCanvas(800,600);
-  circleX = 0; // initializes variable
+    createCanvas(800,600);
+    circleX = 0; // initializes variable
 }
 
 function draw() {
-  background(200); // don't want to see the trail of circles
+    background(200); // don't want to see the trail of circles
   
-  circleX++; // move to the right
-  ellipse(circleX,100,50,50); // circleX is able to vary (vari-able!)
+    circleX++; // move to the right
+    ellipse(circleX,100,50,50); // circleX is able to vary (vari-able!)
 
-  console.log("circleX: " + circleX);
+    console.log("circleX: " + circleX);
 }
 ```
 
@@ -33,15 +33,15 @@ Understanding scope prevents errors such as these:
 
 ```js
 function setup() {
-  createCanvas(800,600);
-  var circleX = 0; // declared locally, only viewable to setup()
+    createCanvas(800,600);
+    var circleX = 0; // declared locally, only viewable to setup()
 }
 
 function draw() {
-  background(200);
+    background(200);
   
-  circleX++; // ReferenceError: circleX is not defined
-  ellipse(circleX,100,50,50);
+    circleX++; // ReferenceError: circleX is not defined
+    ellipse(circleX,100,50,50);
 }
 ```
 
@@ -61,11 +61,11 @@ These essentially _automatically_ save whichever numbers you write in `createCan
 
 ```js
 function setup() {
-  createCanvas(800,600);
+    createCanvas(800,600);
 }
 
 function draw() {
-  ellipse(width/2, height/2, 50, 50); // center of the canvas
+    ellipse(width/2, height/2, 50, 50); // center of the canvas
 }
 ```
 
@@ -96,18 +96,18 @@ For example, suppose you wanted to prevent your ellipse from leaving the canvas 
 var circleX; 
 
 function setup() {
-  createCanvas(800,600);
-  circleX = 0; 
+    createCanvas(800,600);
+    circleX = 0; 
 }
 
 function draw() {
-  background(200); 
+    background(200); 
   
-  circleX++; // move to the right
-  circleX = constrain(circleX,0,width); // prevent circle from leaving the canvas
-  ellipse(circleX,100,50,50);
+    circleX++; // move to the right
+    circleX = constrain(circleX,0,width); // prevent circle from leaving the canvas
+    ellipse(circleX,100,50,50);
 
-  console.log("circleX: " + circleX);
+    console.log("circleX: " + circleX);
 }
 ```
 
