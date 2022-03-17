@@ -52,7 +52,7 @@ For now, we get around this problem by using global variables. But just know tha
 
 ### System Variables
 
-Two commonly-used variables that are _already defined_ in P5js are:
+You can generally name your own variables whatever you want, with a few exceptions: **system variables**. Two commonly-used system variables that are _already defined_ in P5js are:
 
 * `width`
 * `height`
