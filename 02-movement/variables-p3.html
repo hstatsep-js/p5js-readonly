@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            
+            var circleX; // variable declared globally
+            // circleX = 0; // could also be initialized here.
+            
+            function setup() {
+              createCanvas(800,600);
+              circleX = 0; // initializes variable
+            //   frameRate(1)
+            }
+            
+            function draw() {
+              background(200); // don't want to see the trail of circles
+              
+              circleX++; // move to the right
+              circleX = constrain(circleX,0,800);
+              ellipse(circleX,100,50,50); // circleX is able to vary (vari-able!)
+            
+              console.log("circleX: " + circleX);
+            
+                // ellipse(width/2,height/2,50,50);
+            
+            }
+            
+        </script>
+    </body>
+</html>
