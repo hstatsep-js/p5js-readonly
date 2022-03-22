@@ -155,7 +155,7 @@ Each of the following functions runs **once** EVERY time the user event happens:
 * `function keyReleased(){}` runs when a key is lifted up
 * `function keyTyped(){}` basically the two above, combined (pressed down, then lifted up)
 
-### Booleans
+### Event variables
 
 For future reference, there are also system variables that contain user information, much like `mouseX` and `mouseY`.
 
