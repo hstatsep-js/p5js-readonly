@@ -155,13 +155,13 @@ Each of the following functions runs **once** EVERY time the user event happens:
 * `function keyReleased(){}` runs when a key is lifted up
 * `function keyTyped(){}` basically the two above, combined (pressed down, then lifted up)
 
-### Event variables
+### System (event) variables
 
 For future reference, there are also system variables that contain user information, much like `mouseX` and `mouseY`.
 
 * `mouseIsPressed` is a boolean
 * `keyIsPressed` is a boolean
-* `key` contains a single-character string
+* `key` contains the most recently-pressed single-character string
 * `keyCode` is used to detect special keys, explained [here](https://p5js.org/reference/#/p5/keyCode)
 
 All events can be found [here](https://p5js.org/reference/index.html#group-Events).
