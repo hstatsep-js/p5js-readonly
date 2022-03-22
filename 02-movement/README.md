@@ -137,3 +137,31 @@ These system variables are really fun:
 
 They are just numbers, so use them anywhere you would use a number! (see the list above)
 
+## Events
+
+In addition to `function setup(){}` and `function draw(){}`, there are other P5js functions that are automatically called, but they depend on user input. 
+
+Each of the following functions runs **once** EVERY time the user event happens:
+
+### Mouse
+
+* `function mousePressed(){}` runs when the mouse is pressed down
+* `function mouseReleased(){}` runs when the mouse is lifted up
+* `function mouseClicked(){}` basically the two above, combined (pressed down, then lifted up)
+
+### Keyboard
+
+* `function keyPressed(){}` runs when a is pressed down
+* `function keyReleased(){}` runs when a key is lifted up
+* `function keyTyped(){}` basically the two above, combined (pressed down, then lifted up)
+
+### Booleans
+
+For future reference, there are also system variables that contain user information, much like `mouseX` and `mouseY`.
+
+* `mouseIsPressed` is a boolean
+* `keyIsPressed` is a boolean
+* `key` contains a single-character string
+* `keyCode` is used to detect special keys, explained [here](https://p5js.org/reference/#/p5/keyCode)
+
+All events can be found [here](https://p5js.org/reference/index.html#group-Events).
