@@ -137,3 +137,68 @@ These system variables are really fun:
 
 They are just numbers, so use them anywhere you would use a number! (see the list above)
 
+## Events
+
+In addition to `function setup(){}` and `function draw(){}`, there are other P5js functions that are automatically called, but they depend on user input. 
+
+Each of the following functions runs **once** EVERY time the user event happens:
+
+### Mouse
+
+* `function mousePressed(){}` runs when the mouse is pressed down
+* `function mouseReleased(){}` runs when the mouse is lifted up
+* `function mouseClicked(){}` basically the two above, combined (pressed down, then lifted up)
+
+### Keyboard
+
+* `function keyPressed(){}` runs when a is pressed down
+* `function keyReleased(){}` runs when a key is lifted up
+* `function keyTyped(){}` basically the two above, combined (pressed down, then lifted up)
+
+### System (event) variables
+
+For future reference, there are also system variables that contain user information, much like `mouseX` and `mouseY`.
+
+* `mouseIsPressed` is a boolean
+* `keyIsPressed` is a boolean
+* `key` contains the most recently-pressed single-character string
+* `keyCode` is used to detect special keys, explained [here](https://p5js.org/reference/#/p5/keyCode)
+
+All events can be found [here](https://p5js.org/reference/index.html#group-Events).
+
+## Random
+
+`random()`
+* returns a value between `0` and `1`
+
+`random(max)`
+* returns a value between `0` and `max`
+
+`random(min,max)`
+* returns a value between `min` and `max`
+
+_NOTE: only works inside of function definitions_
+
+_Outside of a function, use `Math.random()`_
+
+Example:
+
+```js
+
+var randShade; // global variable
+
+function setup() {
+    createCanvas(800,600);
+    randShade = random(255); // initialized once
+}
+
+function draw() {
+    fill(randShade);
+    ellipse(width/2, height/2, 100);
+}
+
+function mousePressed() {
+    randShade = random(255); // new shade
+}
+
+```
