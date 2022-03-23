@@ -22,36 +22,21 @@
         <script>
             // JS
             
-            var c = 127;
-            var size = 50;
-            
-            function setup() {
-                createCanvas(800, 600);
-            }
+            var randShade; // global variable
 
-            function draw() {
-                background(200);
-                
-                c = constrain(c,0,255);
-                size = constrain(size,10,Infinity);
-                
-                fill(c);
-                ellipse(mouseX,mouseY,50,50);
-                
-                // console.log(c);
+            function setup() {
+                createCanvas(800,600);
+                randShade = random(255); // initialized once
+            }
             
+            function draw() {
+                console.log(randShade);
+                fill(randShade);
+                ellipse(width/2, height/2, 100);
             }
             
             function mousePressed() {
-                c += 10;
-                // c = constrain(c,0,255)
-               
-            }
-            
-            function keyPressed() {
-                c -= 10;
-                // c = constrain(c,0,255)
-                
+                randShade = random(255); // new shade
             }
             
         </script>
