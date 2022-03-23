@@ -22,7 +22,7 @@
         <script>
             // JS
             
-            var c = 200;
+            var c = 127;
             
             function setup() {
                 createCanvas(800, 600);
@@ -31,16 +31,25 @@
             function draw() {
                 background(200);
                 
+                c = constrain(c,0,255)
                 fill(c);
                 ellipse(mouseX,mouseY,50,50);
+                
+                console.log(c);
+                
+            
             }
             
             function mousePressed() {
-                c = 255;
+                c += 10;
+                // c = constrain(c,0,255)
+               
             }
             
             function keyPressed() {
-                c = 0;
+                c -= 10;
+                // c = constrain(c,0,255)
+                
             }
             
         </script>
