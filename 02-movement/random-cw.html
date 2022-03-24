@@ -21,37 +21,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <script>
             // JS
-            
-            var c = 127;
-            var size = 50;
+            var x;
+            var y;
+            var size;
+            var r;
+            var g;
+            var b;
             
             function setup() {
                 createCanvas(800, 600);
+                // background(200);
             }
 
             function draw() {
-                background(200);
+                x = random(width);
+                y = random(height);
+                size = random(200);
+                r = random(255);
+                g = random(255);
+                b = random(255);
+                fill(r,g,b);
+                ellipse(x,y,size);
                 
-                c = constrain(c,0,255);
-                size = constrain(size,10,Infinity);
-                
-                fill(c);
-                ellipse(mouseX,mouseY,size,size);
-                
-                // console.log(c);
-            
-            }
-            
-            function mousePressed() {
-               c += 10;
-               // c = constrain(c,0,255)
-               size += 10;
-            }
-            
-            function keyPressed() {
-                c -= 10;
-                // c = constrain(c,0,255)
-                size -= 10;
+                // alternate method without variables
+                // fill(random(255),random(255),random(255));
+                // ellipse(random(width),random(height),random(200));
             }
             
         </script>
