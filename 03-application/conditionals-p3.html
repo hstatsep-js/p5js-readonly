@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            
+            var x; // position
+            var xSpeed; // velocity
+            
+            function setup() {
+                createCanvas(400, 400);
+                x = width/2;
+                xSpeed = 5
+                // frameRate(5);
+            }
+
+            function draw() {
+                background(200);
+                ellipse(x, height/2, 50,50); 
+                x += xSpeed;
+                // console.log(x); // position
+                console.log(xSpeed); // speed
+                
+                // if(x >= width) { // past the right edge
+                //     x = 0; // reset at the left edge
+                // }
+                
+                // if(x >= width) { // past the right edge
+                //     xSpeed = -5;
+                // } else if(x <= 0) { // past the left edge
+                //     // console.log("past the left edge")
+                //     xSpeed = 5;
+                // }
+                
+                if(x >= width || x <= 0) { // past the right edge OR left edge
+                    // bounce
+                    xSpeed *= -1;
+                } 
+            }
+            
+        </script>
+    </body>
+</html>
