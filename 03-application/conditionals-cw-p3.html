@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            var mousePosition;
+            var xSpeed = 0;
+            var x = 200;
+            var r = 200;
+            var g = 200;
+            var b = 200;
+
+            function setup() {
+                createCanvas(500,500);
+                rectMode(CENTER);
+            }
+
+            function draw() {
+
+                x =  constrain(x, 200, 300)
+                r = constrain(r, 0, 200)
+                b = constrain(b, 0, 200)
+                g = constrain(g, 200, 255)
+
+
+                background(0);
+
+                // gray oval
+                fill(r,g,b); // needs to be able to turn green
+                rect(width/2,200,200,100,100);
+
+                // white circle that stays between 200 and 300
+                fill(255);
+                ellipse(x,200,100,100);
+                x += xSpeed;
+
+                console.log(mousePosition)
+
+                if(mousePosition == "left"){
+                    xSpeed = -5;
+
+                    r -= xSpeed;
+                    g += xSpeed;
+                    b -= xSpeed;
+                }else if(mousePosition == "right"){
+                    xSpeed = 5;
+
+                    r -= xSpeed;
+                    g -= xSpeed;
+                    b -= xSpeed;
+                }
+              
+            }
+
+
+            function mousePressed() {
+                if(mouseX < width/2){
+                    mousePosition = "left"
+                }else if(mouseX > width/2){
+                    mousePosition = "right"
+                }
+
+
+
+            }
+
+            
+        </script>
+    </body>
+</html>
