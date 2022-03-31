@@ -67,3 +67,63 @@ function draw() {
     
 }
 ```
+
+## Loops
+
+Remember that there are three kinds of loops we've learned: `while`, `for`, and `forEach`.
+
+```js
+// while
+var i = 0;
+while(i < 3) {
+    console.log(i);
+    i++;
+}
+
+// for
+for(var i = 0; i < 3; i++) {
+    console.log(i);
+}
+
+// forEach
+var foods = ["apples", "bananas", "carrots"];
+foods.forEach(function(food){ // remember you could write `function(food, i)` to have access to `i`
+    console.log(food);
+});
+
+```
+
+The most common usage is a `for` loop. Here is an example that draws `10` vertical lines in a `100`x`100` canvas:
+```js
+function setup() {
+    createCanvas(100, 100);
+}
+
+function draw() {
+    background(255);
+  
+    for(var x = 0; x < 100; x += 10) {
+        line(x, 0, x, 100); // vertical lines, drawn LEFT to RIGHT
+    }
+}
+```
+
+If we add in another loop, we can draw the horizontal lines as well.
+```js
+for(var x = 0; x < 100; x += 10) {
+    line(x, 0, x, 100); // vertical lines, drawn LEFT to RIGHT
+}
+for(var y = 0; y < 100; y += 10) {
+    line(0, y, 100, y); // horizontal lines, drawn TOP to BOTTOM
+}
+```
+
+Hopefully you noticed that the headers are exactly the same for both loops, so we could combine them into one loop. But we should probably change our variable name.
+```js
+for(var i = 0; i < 100; i += 10) {
+    line(i, 0, i, 100); // vertical lines, drawn LEFT to RIGHT
+    line(0, i, 100, i); // horizontal lines, drawn TOP to BOTTOM
+}
+```
+
+As a fun extension, try to create the SAME result using `rect()` instead of `line()`. Hint, use a `for` loop _inside_ a `for` loop.
