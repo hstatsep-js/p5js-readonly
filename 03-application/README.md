@@ -174,20 +174,20 @@ var foods;
 var i;
 
 function setup() {
-  createCanvas(400, 400);
-  foods = ["apples", "bananas", "carrots"];
-  i = 0;
+    createCanvas(400, 400);
+    foods = ["apples", "bananas", "carrots"];
+    i = 0;
 }
 
 function draw() {
-  background(220);
-  textSize(40);
-  textAlign(CENTER,CENTER);
-  text(foods[i],width/2,height/2);
+    background(220);
+    textSize(40);
+    textAlign(CENTER,CENTER);
+    text(foods[i],width/2,height/2);
 }
 
 function mousePressed() {
-  i++;
+    i++;
 }
 ```
 
