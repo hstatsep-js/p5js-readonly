@@ -75,9 +75,16 @@
 
                 textSize(20);
                 fill(255);
+                // var p = 70;
                 // loop to print all items
+                // for(var i = 0; i < groceryList.length; i++){
+                //     text((i+1) + ". " + groceryList[i],400,i*30+70);
+                // }
                 
-
+                // foreach instead
+                groceryList.forEach(function(grocery,i){
+                    text((i+1) + ". " + groceryList[i],400,i*30+70);
+                });
             }
 
             function keyPressed() {
