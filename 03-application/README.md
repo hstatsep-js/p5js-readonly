@@ -196,3 +196,58 @@ How could we make the pattern repeat, so that it says Apples, Bananas, Carrots, 
 There are multiple ways! Here are two hints:
 * `if()` to reset
 * use mod (`%`)
+
+## Objects
+
+Objects are a way of wrapping data together, i.e. variables. We can use JSON (JavaScript Object Notation) syntax.
+
+For example, instead of having two separate variables:
+
+```js
+var ballX = 400;
+var ballY = 300;
+```
+
+... we can wrap those two variables together inside an object:
+
+```js
+var ball = {
+    x: 400,
+    y: 300
+}
+```
+
+We call `x` and `y` "properties", whereas `400` and `300` are their respective "values". Notice the `:` that separates properties/values, and the `,` that separates each pair (you can have has many pairs as you want!).
+
+We can then read/write the values of those properties using _dot notation_:
+
+```js
+console.log(ball.x); // 400 (read)
+ball.x = 401; // (over)write
+```
+
+You can use this idea in P5js just like you would with any variable:
+
+```js
+var ball;
+
+function setup() {
+    createCanvas(800, 600);
+    ball = {
+        x: 400,
+        y: 300
+    }
+}
+
+function draw() {
+    background(220);
+    ellipse(ball.x, ball.y, 50, 50);
+}
+```
+
+For more information about objects, here are some resources:
+* [w3schools](https://www.w3schools.com/js/js_objects.asp)
+* [freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript), starting at [Build JavaScript Objects](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)
+* [dot notation vs bracket notation](https://medium.com/@prufrock123/js-dot-notation-vs-bracket-notation-797c4e34f01d)
+
+
