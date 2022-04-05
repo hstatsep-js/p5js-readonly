@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            
+            var groceryList = ["milk","eggs","bread"];
+
+            function addItem() { // runs when the user presses 'a'
+                var newItem = prompt("What would you like to add?");
+                groceryList.push(newItem);
+            }
+
+            function deleteLastItem() { // runs when the user presses 'd'
+                var lastItem = groceryList.pop();
+                alert("Removing: " + lastItem);
+            }
+
+            function changeSpecificItem() { // runs when the user presses 'c'
+                var newItemNum = prompt("Which item do you want to change? Please enter the number of the item on the list.");
+                var newItem = prompt("What would you like to change it to?");
+                groceryList[newItemNum-1] = newItem;
+            }
+
+            function removeSpecificItem() { // runs when the user presses 'r'
+                var itemNum = prompt("Which item do you want to remove? Please enter the number of the item on the list.");
+                groceryList.splice(itemNum-1, 1);
+            }
+
+            function insertItem() { // runs when the user presses 'i'
+                var newItem = prompt("What would you like to add?");
+                var newItemNum = prompt("Where would you like to add the item?");
+                groceryList.splice(newItemNum-1,0,newItem);
+            }
+
+            // p5js functions
+
+            function setup() {
+                createCanvas(600, 400);
+            }
+
+            function draw() {
+                background(0);
+
+                fill(100);
+                rect(30,50,275,300)
+                fill(255);
+                textSize(30);
+                text("Grocery List App",55,100);
+                textSize(12);
+                text("Use the following letters to change your list!",50,150);
+                textSize(15);
+                text("a = add item to the end of the list",40,200);
+                text("d = delete last item in the list",40,225);
+                text("c = change an item on the list",40,250);
+                text("r = remove a specific item from the list",40,275);
+                text("i = insert a specific item in the list",40,300);
+
+                textSize(20);
+                fill(255);
+                // loop to print all items
+                
+
+            }
+
+            function keyPressed() {
+                if(key.toLowerCase() == 'a') {
+                    addItem();
+                } else if(key.toLowerCase() == 'd') {
+                    deleteLastItem();
+                } else if(key.toLowerCase() == 'c') {
+                    changeSpecificItem();
+                } else if(key.toLowerCase() == 'r') {
+                    removeSpecificItem();
+                } else if(key.toLowerCase() == 'i') {
+                    insertItem();
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
