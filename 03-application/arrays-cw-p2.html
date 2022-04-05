@@ -22,6 +22,7 @@
             // JS
             
             var groceryList = ["milk","eggs","bread"];
+            // console.log(groceryList)
 
             function addItem() { // runs when the user presses 'a'
                 var newItem = prompt("What would you like to add?");
@@ -76,7 +77,10 @@
                 textSize(20);
                 fill(255);
                 // loop to print all items
-                
+                console.log(groceryList)
+                for(var i = 0; i < groceryList.length; i++){
+                    text(groceryList[i], 500,i*100+50) // print the current item 
+                }
 
             }
 

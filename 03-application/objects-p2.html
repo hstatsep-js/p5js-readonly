@@ -22,34 +22,64 @@
         <script>
             // JS
             
-            var xs = [];
-            var ys = [];
+            var ball;
+
+            // function setup() {
+            //     createCanvas(800, 600);
+            //     ball = {
+            //         x: 400,
+            //         y: 300
+            //     }
+            // }
+            
+            // function draw() {
+            //     background(220);
+            //     ellipse(ball.x, ball.y, 50, 50);
+            // }
+            
+            
+            // var xs = [];
+            // var ys = [];
+            // var bubble1;
+            var bubbles = [];
             
             function setup() {
-                createCanvas(400, 400);
-                
+                createCanvas(800, 600);
+                // bubble1 = {
+                //     x: width/2,
+                //     y: height/2
+                // }
             }
 
             function draw() {
                 background(220);
-                console.log("xs: " + xs);
-                console.log("ys: " + ys);
+                // console.log("xs: " + xs);
+                // console.log("ys: " + ys);
                 
-                for(var i = 0; i < xs.length; i++) { // loop through array(s)
-                    ellipse(xs[i],ys[i],50,50);
-                    // xs[i] += random(-2,2); // update the current x by a random value
-                    // ys[i] += random(-2,2);
+                for(var i = 0; i < bubbles.length; i++) { // loop through array(s)
+                    ellipse(bubbles[i].x,bubbles[i].y,50,50);
+                    bubbles[i].x += random(-2,2); // update the current x by a random value
+                    bubbles[i].y += random(-2,2);
                 }
                 
+                // ellipse(bubble1.x,bubble1.y,50,50);
+                
                 ellipse(mouseX,mouseY,50,50);
+                
+                console.log(bubbles)
             }
             
             function mousePressed() { // mouseDragged is also fun
                 // ellipse(mouseX,mouseY,50,50); // gets erased by background
                 
                 // save the x and y values of the mouse
-                xs.push(mouseX);
-                ys.push(mouseY);
+                // xs.push(mouseX);
+                // ys.push(mouseY);
+                
+                bubbles.push({
+                    x: mouseX,
+                    y: mouseY
+                })
             }
             
             
