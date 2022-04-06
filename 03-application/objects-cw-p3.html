@@ -22,7 +22,7 @@
         <script>
             // JS
             
-            var anchor;
+            var anchor, points = [];
 
             function setup() {
                 createCanvas(400, 400);
@@ -48,8 +48,21 @@
                 }
             
                 // comment this out eventually
-                ellipse(anchor.x,anchor.y,10,10);
+                points.forEach(function(point){
+                    line(anchor.x,anchor.y,point.x,point.y)
+                })
+                // for(let i = 0; i < points.length; i++) {
+                //     line(anchor.x,anchor.y,points[i].x,points[i].y)
+                // }
+                // ellipse(anchor.x,anchor.y,10,10);
             
+            }
+            function mousePressed() {
+                points.push({
+                    x : mouseX,
+                    y : mouseY
+                })
+                console.log(points)
             }
             
             // Extension 1: make it so the user can drag the mouse to make multiple lines at once
