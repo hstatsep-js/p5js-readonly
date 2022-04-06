@@ -251,3 +251,77 @@ For more information about objects, here are some resources:
 * [dot notation vs bracket notation](https://medium.com/@prufrock123/js-dot-notation-vs-bracket-notation-797c4e34f01d)
 
 
+## Classes
+
+We've seen how objects can wrap variables together. You can even include functions! The best way to do this is to shift to object-oriented programming, where you define a **class** which acts as a blueprint (or a template) for creating multiple instances of that class (i.e. objects). 
+
+That probably sounds like a bunch of vocab jargon, but it'll make more sense as we go, and we'll recap at the end.
+
+Here is the generic code:
+
+```js
+class MyClassName {
+
+    
+    // how to make a NEW instance of this class
+    constructor() {
+        // variables are often setup here
+        // each instance of the class gets their own copy of the variable
+    }
+
+    // functions
+    // each instance can also perform these functions
+
+}
+```
+
+Notice the convention for classes: they start with a capital letter. This is important for distinguishing from other variables/functions!
+
+Here is an example of the code in action:
+
+```js
+class Bubble {
+
+    constructor(x,y) {
+        this.x = x; // `this` refers to the instance you are currently working on
+        this.y = y; // which helps us distinguish from parameters in the constructor
+    }
+
+    move() {
+        this.x += random(-2, 2);
+        this.y += random(-2, 2);
+    }
+
+    display() {
+        ellipse(this.x, this.y, 50, 50);
+    }
+
+}
+```
+
+By itself, this code does nothing, much like defining a function. But just like you can call a function, you can create a new instance of a class.
+
+```js
+
+var bubble1;
+
+function setup() {
+    createCanvas(800, 600);
+    bubble1 = new Bubble(width/2, height/2); // activate the constructor and pass in arguments
+}
+
+function draw() {
+    background(220);
+
+    bubble1.move(); // call that instance's functions
+    bubble1.display(); // to make them run
+}
+```
+
+Now, with a single line of code, we can create a new instance of the `Bubble` class. Then we call functions as we want them to run!
+
+Here is a recap of some vocabulary:
+* `Class`: the template/blueprint for making similar things.
+* `Constructor`: a special function that runs once when `new` is used.
+* `Instance`: usually followed by a classname, i.e. "a new instance of the Bubble class". Basically the template was used to create something.
+* `Object`: the generic word for any instance of any class. In Javascript, is even more generic to include basic objects like property-value pairs.
