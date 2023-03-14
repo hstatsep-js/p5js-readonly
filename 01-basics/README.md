@@ -37,3 +37,30 @@ line(x1,y1,x2,y2); // from (x1,y1) to (x2,y2)
 | `ellipseMode(CORNERS)` | `ellipse(x1,y1,x2,y2)` |  |
 
 Note: you can also use `ellipse(x,y,diameter)` to draw a perfect circle.
+
+## Text, Layers, Comments, Thickness
+
+### Text
+
+```js
+textSize(32); // (any number)             
+text("word", x, y);
+```
+Note: `x` and `y` are the BOTTOM-LEFT corner of the text
+You can change this by putting 
+```js
+textAlign(CENTER); // (or LEFT or RIGHT) to center horizontally
+textAlign(CENTER,CENTER); // (or LEFT or RIGHT) to center horizontally AND vertically
+```
+before your text.
+
+If you want to wrap text in a box, use:
+```js
+text(str,x,y,w,h)
+```
+where:
+* `str` is your string
+* (`x`,`y`) represents the top-left corner of the box
+* `w` and `h` represent the size of your box, respectively
+
+Bonus: you can import a Google Font like you normally would into an HTML file, then use `textFont('Your font here')` to set the p5js font.
