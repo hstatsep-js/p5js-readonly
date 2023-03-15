@@ -154,3 +154,12 @@ console.log(mouseX,mouseY); // Helpful for locating a shape
   * `noFill()`: same as setting opacity to 0
   * `noStroke()`: same as setting `strokeWeight(0)`
   * `background(r,g,b,[a])`: set the background to a color
+* How many arguments for `fill()`, `background()`, `stroke()`, etc
+  * 1 number: grayscale
+    * ex: `(200)` = light gray
+  * 2 numbers: grayscale+alpha
+    * ex: `(200,127)` = light gray, half-transparent
+  * 3 numbers: color
+    * ex: `(255,0,0)` = red
+  * 4 numbers: color+alpha
+    * ex: `(255,0,0,127)` = red, half-transparent
