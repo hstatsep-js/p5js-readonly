@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+
+            var r, g, b;
+            var toggle;
+            var x;
+            
+            function setup() {
+                createCanvas(500,500);
+                rectMode(CENTER);
+                r = 200;
+                g = 200;
+                b = 200;
+                toggle = false;
+                x = 200;
+            }
+
+            function draw() {
+                background(0);
+
+                // gray oval
+                fill(r,g,b); // needs to be able to turn green
+                rect(width/2,200,200,100,100);
+                
+                // white circle that stays between 200 and 300
+                fill(255);
+                ellipse(x,200,100,100);
+
+                console.log(x);
+
+                if(toggle){ // fade to green
+                    r -= 4;
+                    g++;
+                    b -= 4;
+                    x += 5;
+                } else { // fade to gray
+                    r += 4;
+                    g--;
+                    b += 4;
+                    x -= 5;
+                }
+                r = constrain(r,0,200);
+                g = constrain(g,200,255);
+                b = constrain(b,0,200);
+                x = constrain(x,200,300);
+            }
+
+            function mousePressed(){
+                if(mouseX > width/2) { // right half
+                    toggle = true;
+                } else { // left half
+                    toggle = false;
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
