@@ -190,7 +190,7 @@ function mousePressed() {
 }
 ```
 
-How could we make the pattern repeat, so that it says Apples, Bananas, Carrots, Apples, Bananas, Carrots, Apples, ...
+How could we make the pattern repeat, so that it goes black, gray, white, black, gray, white, ...
 
 There are multiple ways! Here are two hints:
 * `if()` to reset
