@@ -127,3 +127,71 @@ for(var i = 0; i < 100; i += 10) {
 ```
 
 As a fun extension, try to create the SAME result using `rect()` instead of `line()`. Hint, use a `for` loop _inside_ a `for` loop.
+
+## Arrays
+
+As a reminder, here are some common array methods:
+| method | purpose |
+| --- | --- |
+| `.push()` | add to the end |
+| `.pop()` | remove from the end |
+| `.shift()` | remove from the beginning |
+| `.unshift()` | add to the beginning |
+
+You can access an element by doing `arrName[i]` where `i` is the index number. This is useful for reading or (over)writing.
+
+```js
+var people = ["Alice", "Bob"];
+console.log(people[0]); // "Alice"
+people.push("Carter");
+console.log(people); // ["Alice", "Bob", "Carter"]
+people[1] = "Brenda";
+console.log(people); // ["Alice", "Brenda", "Carter"]
+```
+
+Remember that there are two commons ways to loop through an array: `for` and `forEach`. Also, keep in mind that the `i` is optional in the `forEach`.
+
+```js
+
+var foods = ["apples", "bananas", "carrots"];
+
+// for
+for(var i = 0; i < foods.length; i++) {
+    console.log(foods[i]); // `foods[i]` is the current food
+}
+
+// forEach
+foods.forEach(function(food,i){ 
+    // not using `i`, but could if we needed to
+    console.log(food); // `food` is the current food
+});
+```
+
+In P5js, arrays can be used for all kinds of things. Here is a quick example:
+
+```js
+var shades;
+var i;
+
+function setup() {
+    createCanvas(400, 400);
+    shades = [0, 127, 255];
+    i = 0;
+}
+
+function draw() {
+    background(220);
+    fill(shades[i]);
+    ellipse(width/2,height/2,100)
+}
+
+function mousePressed() {
+    i++;
+}
+```
+
+How could we make the pattern repeat, so that it says Apples, Bananas, Carrots, Apples, Bananas, Carrots, Apples, ...
+
+There are multiple ways! Here are two hints:
+* `if()` to reset
+* use mod (`%`)
