@@ -44,11 +44,18 @@
                 // }
 
                 // ONE loop (lines)
-                for(var i = 0; i < 100; i += 10) {
-                    line(i, 0, i, 100); // vertical lines, drawn LEFT to RIGHT
-                    line(0, i, 100, i); // horizontal lines, drawn TOP to BOTTOM
+                // for(var i = 0; i < 100; i += 10) {
+                //     line(i, 0, i, 100); // vertical lines, drawn LEFT to RIGHT
+                //     line(0, i, 100, i); // horizontal lines, drawn TOP to BOTTOM
+                // }
+
+                // rectangles using a loop inside of a loop
+                for(var row = 0; row <= 100; row += 10){
+                    for(var col = 0; col <= 100; col += 10){ // 1 row
+                        // fill(random(255));
+                        rect(col,row,10,10);
+                    }
                 }
-                
             }
             
         </script>
