@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script>
+            // JS
+            
+            function setup() {
+                createCanvas(800, 600);
+            }
+
+            function draw() {
+                strokeWeight(5);
+                
+                ellipse(400,270,600,300);
+                
+                textFont('Quicksand');
+                textSize(100);
+                textAlign(CENTER);
+                text("Mr. Mueller",400,300);
+                console.log(mouseX,mouseY);
+
+                // distance across M: 58
+                // TL-TR-middle
+                triangle(172,230,172+58,230,172+29,230+40); // Mr.
+                triangle(324,230,324+58,230,324+29,230+40); // Mueller
+            }
+            
+        </script>
+    </body>
+</html>
