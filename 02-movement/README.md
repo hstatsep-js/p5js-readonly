@@ -74,3 +74,57 @@ This is essentially calculating the position based on the dimensions of the canv
 * `y`: `height/2` = `600`/`2` = `300`
 
 So why not just type in `ellipse(400, 300, 50, 50);`? The magic happens when you change the size of the canvas. Go ahead, try it!
+
+### Constrain
+
+There are times when you want to restrict the value of a variable to stay between a set of **minimum** and **maximum** values. For that, we have:
+
+`constrain(val,min,max)`
+
+Here's what gets returned:
+* If `val` is within `[min,max]`, `val` gets returned
+* If `val` is greater than `max`, `max` gets returned
+* If `val` is less than `min`, `min` gets returned
+
+The most common usage of this is to then _save_ (overwrite) that return value, i.e:
+
+`val = constrain(val,min,max)`
+
+For example, suppose you wanted to prevent your ellipse from leaving the canvas (i.e. "constrain" it). The code would look like this:
+
+```js
+var circleX; 
+
+function setup() {
+    createCanvas(800,600);
+    circleX = 0; 
+}
+
+function draw() {
+    background(200); 
+  
+    circleX++; // move to the right
+    circleX = constrain(circleX,0,width); // prevent circle from leaving the canvas
+    ellipse(circleX,100,50,50);
+
+    console.log("circleX: " + circleX);
+}
+```
+
+Behind the scenes, as soon as the value of `circleX` reaches 801, `constrain(circleX,0,width)` returns `800` (the width of our canvas), which then gets saved back into `circleX`.
+
+[Here](https://p5js.org/reference/#/p5/constrain) is another example.
+
+### Fun with variables
+
+Variable can hold all kinds of data (numbers, strings, booleans, etc). But for now, the fun part of storing **numbers** is that numbers are used _all over_ the place in P5js. Here are some reminders of where you see numbers:
+* `point(#,#)`
+* `line(#,#,#,#)`
+* `rect(#,#,#,#)`
+* `ellipse(#,#,#,#)`
+* `background(#,#,#,[#])`
+* `fill(#,#,#,[#])`
+* `stroke(#,#,#,[#])`
+* `strokeWeight(#)`
+* `textSize(#)`
+* `text("Hello World",#,#)`
