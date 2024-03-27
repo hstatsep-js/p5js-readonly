@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+
+            var diameter = 300;
+            var shade = 127;
+
+            function setup() {
+                createCanvas(800, 600);
+                
+            }
+
+            function draw() {
+                background(200);
+
+                fill(shade);
+                ellipse(mouseX,mouseY,diameter);
+                console.log(shade);
+                diameter = constrain(diameter,0,Infinity);
+                shade = constrain(shade,0,255);
+            }
+            function keyPressed() {
+                //  fill(0);
+                diameter -= 20;
+                shade -= 20;
+            }
+
+            function mousePressed() {
+                // fill(255);
+                diameter += 20;
+                shade += 20;
+            }
+            
+        </script>
+    </body>
+</html>
