@@ -165,3 +165,40 @@ For future reference, there are also system variables that contain user informat
 * `keyCode` is used to detect special keys, explained [here](https://p5js.org/reference/#/p5/keyCode)
 
 All events can be found [here](https://p5js.org/reference/index.html#group-Events).
+
+## Random
+
+`random()`
+* returns a value between `0` and `1`
+
+`random(max)`
+* returns a value between `0` and `max`
+
+`random(min,max)`
+* returns a value between `min` and `max`
+
+_NOTE: only works inside of function definitions_
+
+_Outside of a function, use `Math.random()`_
+
+Example:
+
+```js
+
+var randShade; // global variable
+
+function setup() {
+    createCanvas(800,600);
+    randShade = random(255); // initialized once
+}
+
+function draw() {
+    fill(randShade);
+    ellipse(width/2, height/2, 100);
+}
+
+function mousePressed() {
+    randShade = random(255); // new shade
+}
+
+```
