@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+            
+            // bouncing ball
+            // reset at x=0
+
+            var x;
+            var xSpeed;
+
+            function setup() {
+                createCanvas(800, 600);
+                x = width/2;
+                xSpeed = 6;
+                // frameRate(10);
+            }
+
+            function draw() {
+                background(220);
+
+                ellipse(x,height/2,50);
+                x += xSpeed;
+                console.log(xSpeed);
+
+                // if(x > width-25){ // past the right edge
+                //     x = 0; // reset
+                // }
+
+                // if(x > width-25){ // past the right edge
+                //     xSpeed = -6; // bounce
+                // }
+
+                // if(x < 25){ // past the left edge
+                //     xSpeed = 6; // bounce
+                // }
+
+                if(x > width-25 || x < 25){ // past either edge
+                    xSpeed *= -1; // reverse direction
+                }
+            }
+            
+        </script>
+    </body>
+</html>
