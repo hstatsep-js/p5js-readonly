@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+
+            // turn on
+                // ellipse needs to move to the right (and stop at 300)
+                // gray oval needs to turn green slowly (and stop at green)
+            // turn off
+                // ellipse needs to move to the left (stop at 200)
+                // green oval needs to turn gray slowly (stop at gray)
+
+            var x;
+            var r, g, b;
+
+            var toggle = false;
+            
+            function setup() {
+                createCanvas(500,500);
+                rectMode(CENTER);
+                x = 200;
+                r = 200;
+                g = 200;
+                b = 200;
+            }
+
+            function draw() {
+                background(0);
+
+                // gray oval
+                fill(r,g,b); // needs to be able to turn green
+                rect(width/2,200,200,100,100);
+                
+                // white circle that stays between 200 and 300
+                fill(255);
+                ellipse(x,200,100,100);
+
+                console.log({r,g,b});
+
+                if(toggle){
+                    x += 5;
+                    r -= 10;
+                    g += 2;
+                    b -= 10;
+                } else {
+                    x -= 5;
+                    r += 10;
+                    g -= 2;
+                    b += 10;
+                }
+
+                x = constrain(x,200,300);
+                r = constrain(r,0,200);
+                g = constrain(g,200,255);
+                b = constrain(b,0,200);
+            }
+
+            function mousePressed(){
+                if(mouseX > width/2){ // right half
+                    // turn on
+                    toggle = true;
+                } else { // left half
+                    // turn off
+                    toggle = false;
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
