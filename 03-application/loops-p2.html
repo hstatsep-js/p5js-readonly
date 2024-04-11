@@ -47,11 +47,17 @@
                 // }
 
                 // ONE loop: lines
-                for(var i = 0; i < 100; i += 10) {
-                    line(i, 0, i, 100); // vertical lines, drawn LEFT to RIGHT
-                    line(0, i, 100, i); // horizontal lines, drawn TOP to BOTTOM
-                }
+                // for(var i = 0; i < 100; i += 10) {
+                //     line(i, 0, i, 100); // vertical lines, drawn LEFT to RIGHT
+                //     line(0, i, 100, i); // horizontal lines, drawn TOP to BOTTOM
+                // }
 
+                // rectangles; loop inside of a loop
+                for(var y = 0; y<=height; y=y+10){
+                    for(var x = 0; x<=width; x=x+10){
+                        rect(x,y,10,10)
+                    }
+                }
 
             }
             
