@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+
+            var bubble1;
+            var bubbles = []; 
+            
+            function setup() {
+                createCanvas(800, 600);
+
+                bubble1 = {
+                    x: 400,
+                    y: 300
+                }
+                bubbles.push(bubble1)
+
+            }
+
+            function draw() {
+                background(200);
+                // ellipse(bubble1.x, bubble1.y, 50)
+                // bubble1.x += random(-2,2);
+                // bubble1.y += random(-2,2);
+                console.log(bubbles)
+                for(var i = 0; i < bubbles.length; i++){
+                    ellipse(bubbles[i].x, bubbles[i].y, 50);
+                    bubbles[i].x += random(-2,2);
+                    bubbles[i].y += random(-2,2);
+                }
+            }
+
+            function mousePressed(){
+                bubbles.push({
+                    x: mouseX,
+                    y: mouseY
+                })
+            }
+            
+        </script>
+    </body>
+</html>
