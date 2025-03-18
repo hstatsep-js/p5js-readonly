@@ -65,6 +65,7 @@ function setup() {
 }
 
 function draw() {
+    background(200);
     ellipse(width/2, height/2, 50, 50); // center of the canvas
 }
 ```
@@ -128,3 +129,11 @@ Variable can hold all kinds of data (numbers, strings, booleans, etc). But for n
 * `strokeWeight(#)`
 * `textSize(#)`
 * `text("Hello World",#,#)`
+
+## `mouseX` and `mouseY`
+
+These system variables are really fun:
+* `mouseX`: The horizontal location of the user's mouse
+* `mouseY`: The vertical location of the user's mouse
+
+They are just numbers, so use them anywhere you would use a number! (see the list above)
