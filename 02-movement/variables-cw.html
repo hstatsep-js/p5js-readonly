@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+            
+            
+            var rectx1
+            var recty1
+            var rectx2
+            var recty2
+
+
+            function setup() {
+                createCanvas(300, 300);
+                // frameRate(1)
+                
+                // top-left
+                rectx1=0
+                recty1=0
+
+                // top-right
+                rectx2=width-50 // right edge, but scoot back the width of the rectangle
+                recty2=0
+            
+            }
+
+            function draw() {
+                background(220)
+                rect(rectx1,recty1,50)
+                rectx1++ // right
+                recty1++ // down
+                
+                rect(rectx2,recty2,50)
+                rectx2-- // left
+                recty2++ // down
+            
+            }
+            
+        </script>
+    </body>
+</html>
