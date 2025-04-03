@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+            
+            var x = 50;
+            var y = 50;
+            var w = 100;
+            var h = 75;
+
+            var r = 0;
+
+            function setup() {
+                createCanvas(500,500);
+                noStroke();
+            }
+
+            function draw() {
+                background(255);
+                fill(r,0,0);
+
+                rect(x,y,w,h);
+
+                if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h){
+                    r += 5;
+                } else {
+                    r -= 5;
+                }
+                r = constrain(r,0,255);
+            }
+
+            
+        </script>
+    </body>
+</html>
