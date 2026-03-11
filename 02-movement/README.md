@@ -114,7 +114,7 @@ function draw() {
 
 Behind the scenes, as soon as the value of `circleX` reaches 801, `constrain(circleX,0,width)` returns `800` (the width of our canvas), which then gets saved back into `circleX`.
 
-[Here](https://p5js.org/reference/#/p5/constrain) is another example.
+[Here](https://p5js.org/reference/p5/constrain/) is another example.
 
 ### Fun with variables
 
