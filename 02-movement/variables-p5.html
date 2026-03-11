@@ -22,15 +22,22 @@
         <script>
             // JS
             
+            var circleX; 
+
             function setup() {
                 createCanvas(800,600);
+                circleX = 0; 
             }
 
             function draw() {
-                background(200);
-                ellipse(width/2, height/2, 50, 50); // center of the canvas
-            }
+                background(200); 
             
+                circleX++; // move to the right
+                circleX = constrain(circleX,0,width); // prevent circle from leaving the canvas
+                ellipse(circleX,100,50,50);
+
+                console.log("circleX: " + circleX);
+            }
         </script>
     </body>
 </html>
