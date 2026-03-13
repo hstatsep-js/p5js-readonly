@@ -167,4 +167,4 @@ For future reference, there are also system variables that contain user informat
 * `key` contains the most recently-pressed single-character string
 * `keyCode` is used to detect special keys, explained [here](https://p5js.org/reference/p5/keyCode)
 
-All events can be found [here](https://p5js.org/reference/index.html#group-Events).
+All events can be found [here](https://p5js.org/reference/index.html#Events).
