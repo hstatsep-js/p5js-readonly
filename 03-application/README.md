@@ -43,7 +43,7 @@ function draw() {
 
 ```js
 if(x >= width-25){ // past the right edge
-    x = 0; // reset
+    x = 25; // reset
 }
 ```
 
