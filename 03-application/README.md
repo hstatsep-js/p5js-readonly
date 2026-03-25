@@ -55,7 +55,7 @@ if(x >= width-25){ // past the right edge
 }
 ```
 
-#### Step 3: Make it bounce off right edge
+#### Step 3: Make it bounce off left edge
 
 ```js
 if(x <= 25){ // past the left edge
